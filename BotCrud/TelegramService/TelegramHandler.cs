@@ -18,6 +18,7 @@ public class TelegramHandler : IUpdateHandler
 
     public async Task HandleUpdateAsync(ITelegramBotClient _client, Update update, CancellationToken cancellationToken)
     {
+        await Console.Out.WriteLineAsync(update.Message.Text);
         if (update.Message == null) return;
         Parallel.Invoke(() =>
         {
